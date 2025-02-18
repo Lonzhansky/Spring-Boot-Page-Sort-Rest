@@ -45,7 +45,7 @@ https://start.spring.io/
     Spring Boot DevTools
     Spring Web
     Spring Data JPA
-    MySQL Driver
+    PostgreSQL Driver
 
 (4) Перевіряємо. Клікаємо GENERATE.
 
