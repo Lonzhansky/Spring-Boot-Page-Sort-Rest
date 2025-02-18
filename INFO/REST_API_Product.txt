@@ -1,0 +1,77 @@
+
+REST API Product
+-------------------
+
+Postman для тесту REST API
+https://www.postman.com/
+
+(1) Отримання даних
+
+Виконаємо REST-запити, коли таблиця в БД порожня
+
+GET
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products
+
+GET
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products/5
+
+GET
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products/in-stock
+
+GET
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products/pages?sort=name,asc
+
+GET
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products/pages?sort=inStock,desc&sort=name,asc
+
+Наповнемо таблицю ( INFO/SQLs.sql ), та повторно виконаємо ці REST-запити.
+
+(2) Створення даних
+Налаштування в Postman: Body, raw, JSON.
+
+POST
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products
+
+{
+	"name": "Kiwi",
+	"description": "Tasty and useful",
+	"inStock": 1
+}
+
+(3) Оновлення даних
+
+POST
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products
+
+{
+    "id": 3,
+    "name": "Apricot 2",
+    "description": "Composed of 11% carbohydrates.",
+    "inStock": 1
+}
+
+
+PUT
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products/2
+
+{
+    "name": "Pear 2",
+    "description": "Tasty and good",
+    "inStock": 1
+}
+
+
+(4) Видалення даних
+
+DELETE
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products/3
+
+Спробуємо повторно видалити за цим id.
+
+
+(5) Знов переглянемо дані
+
+GET
+http://localhost:8080/Spring-Boot-Page-Sort-Rest-0.0.1-SNAPSHOT/api/v1/products
+
+кількість елементів має змінитися
